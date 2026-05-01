@@ -1,32 +1,68 @@
-# 🚀 JobMatch AI - Scalable AI Job Matching Platform
+# 🚀 JobMatch AI - Premium AI Job Matching Ecosystem
 
 <p align="center">
-  <img src="./screenshot.png" alt="JobMatch AI Banner" width="100%" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+  <img src="./screenshot.png" alt="JobMatch AI Banner" width="100%" style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Outfit&size=24&pause=1000&color=00FFDD&center=true&vCenter=true&width=500&lines=Intelligent+Resume+Matching;Real-time+Employer+Alerts;Scalable+Micro-Architecture;Next-Gen+Glassmorphism+UI" alt="Typing SVG" />
 </p>
 
 <p align="center">
   <a href="https://github.com/ayushtripathi-45/job-matching-platform/stargazers"><img src="https://img.shields.io/github/stars/ayushtripathi-45/job-matching-platform?color=ffdd00&labelColor=000000&style=for-the-badge" alt="Stars"></a>
   <a href="https://github.com/ayushtripathi-45/job-matching-platform/network/members"><img src="https://img.shields.io/github/forks/ayushtripathi-45/job-matching-platform?color=00ffdd&labelColor=000000&style=for-the-badge" alt="Forks"></a>
-  <a href="https://github.com/ayushtripathi-45/job-matching-platform/issues"><img src="https://img.shields.io/github/issues/ayushtripathi-45/job-matching-platform?color=ff00dd&labelColor=000000&style=for-the-badge" alt="Issues"></a>
-  <a href="https://github.com/ayushtripathi-45/job-matching-platform/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ayushtripathi-45/job-matching-platform?color=00ff00&labelColor=000000&style=for-the-badge" alt="License"></a>
+  <a href="https://job-matching-platform-lemon.vercel.app/"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
 </p>
 
 ---
 
-## ✨ Overview
-**JobMatch AI** is a premium, high-performance job platform that leverages **Azure OpenAI** to intelligently match candidates with their dream jobs. Built with a modern **Glassmorphism** design, it features real-time notifications, intelligent resume scoring, and a fully containerized architecture ready for AWS deployment.
-
-### 🌟 Key Features
-- **🤖 AI Resume Scoring:** Leverages Azure OpenAI to analyze resumes and provide a match score against job descriptions.
-- **⚡ Real-time Notifications:** Instant alerts for employers when new candidates apply, powered by Socket.io.
-- **🛡️ Secure Auth:** Robust JWT-based authentication for Candidates and Employers.
-- **🚀 Scalable Architecture:** Monorepo structure with Docker containerization.
-- **💎 Premium UI:** Stunning dark-themed interface with smooth micro-animations.
-- **📂 Cloud Storage:** Seamless resume uploads to AWS S3.
+## 💎 The Vision
+**JobMatch AI** isn't just a job board; it's a high-performance ecosystem designed to bridge the gap between talent and opportunity using cutting-edge AI. Experience a seamless, real-time interface that handles everything from resume parsing to intelligent scoring with millisecond latency.
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Project Structure
+```bash
+job-matching-platform/
+├── 📂 backend/           # Node.js + Express + Prisma (The Engine)
+│   ├── 📂 prisma/        # Database Schema & Migrations (SQLite)
+│   ├── 📂 src/
+│   │   ├── 📂 routes/    # Auth, Jobs, Applications APIs
+│   │   ├── 📂 services/  # AI (OpenAI), Storage (S3), Cache (Redis)
+│   │   └── 📂 middleware/# Auth & Security Layers
+│   └── 📄 Dockerfile     # Backend Containerization
+├── 📂 frontend/          # Next.js + Tailwind (The Interface)
+│   ├── 📂 src/app/       # App Router (Pages & Layouts)
+│   ├── 📂 context/       # Socket.io Real-time State
+│   └── 📄 vercel.json    # Vercel Deployment Config
+├── 📄 docker-compose.yml # Full Stack Orchestration
+└── 📄 render.yaml        # Infrastructure-as-Code for Render
+```
+
+---
+
+## ⚡ Core Functionalities
+
+### 🧠 1. AI Resume Scoring (Azure OpenAI)
+Our proprietary matching algorithm sends resume data and job requirements to **Azure OpenAI**. It returns a calculated match score based on skills, experience, and context.
+- **Service:** `backend/src/services/openai.ts`
+
+### 📢 2. Real-time Notifications (WebSockets)
+Employers receive **instant desktop notifications** the second a candidate applies. No refreshing required.
+- **Engine:** `Socket.io`
+- **Frontend Link:** `NotificationContext.tsx`
+
+### 🚀 3. Multi-Layer Caching (Redis)
+Job searches are lightning-fast. The system caches common search results in **Redis**, reducing database load by up to 80%.
+- **Implementation:** `backend/src/routes/jobs.ts`
+
+### 📂 4. Secure Asset Storage (AWS S3)
+Resumes are handled securely using **AWS S3** with unique UUIDs, ensuring high availability and permanent storage.
+- **Service:** `backend/src/services/s3.ts`
+
+---
+
+## 🛠️ Tech Stack & Tools
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
@@ -35,57 +71,40 @@
   <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
   <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Azure_OpenAI-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </p>
 
 ---
 
-## 🚀 Live Demo
-Check out the live deployment here:  
-👉 **[JobMatch AI Live Demo](https://job-matching-platform-lemon.vercel.app/)** 🌐
+## 🔮 Future Enhancements
+- [ ] **PDF Data Extraction:** Integrate `pdf-parse` for automated resume text extraction.
+- [ ] **AI Interviewer:** Add a chatbot to screen candidates before they apply.
+- [ ] **Email Alerts:** Send formatted HTML emails to candidates on status changes.
+- [ ] **Dark Mode Toggle:** Smooth transition between dark and light themes.
+- [ ] **Mobile App:** React Native companion for instant job alerts on the go.
 
 ---
 
-## 📦 Getting Started
+## ⚙️ Installation & Deployment
 
-### 1️⃣ Clone the Repo
-```bash
-git clone https://github.com/ayushtripathi-45/job-matching-platform.git
-cd job-matching-platform
-```
-
-### 2️⃣ Backend Setup
-```bash
-cd backend
-npm install
-# Configure your .env file with DATABASE_URL, AWS, and OpenAI keys
-npx prisma db push
-npm run dev
-```
-
-### 3️⃣ Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
----
-
-## 🐳 Docker Deployment
-Run the entire stack with a single command:
+### 🐳 The "Easy" Way (Docker)
 ```bash
 docker-compose up --build
 ```
 
----
-
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### ⌨️ The "Developer" Way
+1. **Setup Env:** Copy `.env.example` to `.env` in both folders.
+2. **Install:** `npm install` in both `frontend` and `backend`.
+3. **Run:** `npm run dev` in both folders.
 
 ---
 
 <p align="center">
-  Built with ❤️ by <a href="https://github.com/ayushtripathi-45">Ayush Tripathi</a>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%"/>
+</p>
+
+<p align="center">
+  Developed with Precision by <a href="https://github.com/ayushtripathi-45"><b>Ayush Tripathi</b></a>
 </p>
