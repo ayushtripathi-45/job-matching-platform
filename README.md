@@ -76,10 +76,19 @@ Resumes and candidate assets are stored in **AWS S3** with unique identification
 ---
 
 ## 🔮 Roadmap & Future Enhancements
-- [ ] **AI Video Interviews:** Integrated automated screening.
-- [ ] **Dynamic Theming:** Custom CSS variable-based theme engine.
-- [ ] **Mobile Companion:** Cross-platform app using React Native.
-- [ ] **Advanced Analytics:** Employer insights dashboard for hiring trends.
+- [ ] **📄 Automated PDF Parsing:** Integrate `pdf-parse` or `Textract` to automatically extract text from uploaded resumes for higher AI accuracy.
+- [ ] **🌐 Live Deployment Tracking:** Implement a real-time status dashboard for tracking application deployments and health.
+- [ ] **🤖 AI Interviewer:** Automated screening chatbot for preliminary candidate evaluation.
+- [ ] **📧 Smart Email Alerts:** Branded HTML email notifications for application status updates.
+- [ ] **📱 Mobile Companion:** A dedicated mobile app for instant job alerts.
+
+---
+
+## 🐞 Resolved Challenges & Bugs
+- **Database Interoperability:** Resolved PostgreSQL-specific Enum limitations for SQLite deployment to ensure zero-config local setup.
+- **Environment Parity:** Fixed cross-environment API connection issues by migrating to dynamic environment variables for Vercel/Render.
+- **ESM & Port Management:** Resolved complex ESM module loading and port conflict (`EADDRINUSE`) errors for high-performance development.
+- **Client-Side Metadata:** Refactored Next.js layouts to resolve "use client" and metadata configuration conflicts.
 
 ---
 
