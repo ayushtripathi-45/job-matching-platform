@@ -1,12 +1,11 @@
-import pkg from 'ioredis';
-const Redis = pkg.default || pkg;
+import Redis from 'ioredis';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
 
-export const redis = new (Redis as any)(redisUrl, {
+export const redis = new Redis(redisUrl, {
   maxRetriesPerRequest: 1,
   retryStrategy: (times: number) => {
     if (times > 3) return null; 

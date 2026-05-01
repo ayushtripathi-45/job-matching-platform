@@ -13,7 +13,7 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 }, // 5 MB limit
 });
 
-router.post('/', authenticateToken, upload.single('resume'), async (req: AuthRequest, res: any) => {
+router.post('/', authenticateToken, upload.single('resume'), async (req: any, res: any) => {
   try {
     if (req.user?.role !== 'CANDIDATE') {
       return res.status(403).json({ error: 'Only candidates can apply to jobs' });
@@ -71,7 +71,7 @@ router.post('/', authenticateToken, upload.single('resume'), async (req: AuthReq
 });
 
 // Fetch applications for a specific job (Employer only)
-router.get('/job/:jobId', authenticateToken, async (req: AuthRequest, res: any) => {
+router.get('/job/:jobId', authenticateToken, async (req: any, res: any) => {
   try {
     const { jobId } = req.params;
 
@@ -95,7 +95,7 @@ router.get('/job/:jobId', authenticateToken, async (req: AuthRequest, res: any) 
 });
 
 // Fetch applications for the logged-in candidate
-router.get('/user', authenticateToken, async (req: AuthRequest, res: any) => {
+router.get('/user', authenticateToken, async (req: any, res: any) => {
   try {
     const applications = await prisma.application.findMany({
       where: { candidateId: req.user?.id },

@@ -18,6 +18,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    async function fetchJobs() {
       try {
         const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
         const res = await fetch(`${API_URL}/api/jobs`);

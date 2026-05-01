@@ -6,7 +6,7 @@ import { redis } from '../redis.js';
 const router = Router();
 
 // Create a job (Employer only)
-router.post('/', authenticateToken, async (req: AuthRequest, res: any) => {
+router.post('/', authenticateToken, async (req: any, res: any) => {
   try {
     if (req.user?.role !== 'EMPLOYER') {
       return res.status(403).json({ error: 'Only employers can post jobs' });

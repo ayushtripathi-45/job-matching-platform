@@ -25,8 +25,11 @@ app.use(express.json());
 // Set up Socket.io global instance so routes can access it if needed
 app.set('io', io);
 
+import { Request, Response } from 'express';
+// ... existing imports ...
+
 // Basic health check
-app.get('/health', (req, res) => res.send('OK'));
+app.get('/health', (req: Request, res: Response) => res.send('OK'));
 
 // API Routes
 app.use('/api/auth', authRoutes);
