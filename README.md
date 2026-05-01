@@ -43,7 +43,7 @@
 
 ## 🚀 Live Demo
 Check out the live deployment here:  
-👉 **[JobMatch AI Live Demo](https://job-matching-platform-demo.vercel.app)** *(Link placeholder - Deploy to Vercel/AWS to activate)*
+👉 **[JobMatch AI Live Demo](https://job-matching-platform-lemon.vercel.app/)** 🌐
 
 ---
 
