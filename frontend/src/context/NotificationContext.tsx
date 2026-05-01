@@ -20,7 +20,8 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5001');
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+    const newSocket = io(API_URL);
     setSocket(newSocket);
 
     // In a real app, you'd get the userId from the auth state

@@ -15,9 +15,9 @@ export default function Dashboard() {
 
     async function fetchDashboardData() {
       try {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
         const endpoint = userRole === 'EMPLOYER' ? '/api/jobs' : '/api/applications/user';
-        // (Note: I need to implement /api/applications/user in the backend if it doesn't exist)
-        const res = await fetch(`http://localhost:5001${endpoint}`, {
+        const res = await fetch(`${API_URL}${endpoint}`, {
           headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
         });
         const result = await res.json();

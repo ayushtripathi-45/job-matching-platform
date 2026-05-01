@@ -19,7 +19,8 @@ export default function ApplyPage() {
     formData.append('jobId', jobId as string);
 
     try {
-      const res = await fetch('http://localhost:5001/api/applications', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
+      const res = await fetch(`${API_URL}/api/applications`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
